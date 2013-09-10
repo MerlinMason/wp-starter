@@ -1,0 +1,182 @@
+/*!
+	Theme Name: WP-Starter
+	Author: Merlin Mason
+	Version: 1.0
+	License: GNU General Public License
+*/
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Setup
+//-------------------------------------------------------------------------------------------------------------------
+
+
+@charset "UTF-8";
+@import "reset.less";
+@import "vars.less";
+@import "preboot.less";
+@import "helpers.less";
+
+::-moz-selection {
+	background:;
+	color:;
+	text-shadow: none;
+}
+::selection {
+	background:;
+	color:;
+	text-shadow: none;
+}
+a:link {
+	-webkit-tap-highlight-color:;
+}
+html {
+	overflow:auto;
+	overflow-y: scroll;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Typography
+//-------------------------------------------------------------------------------------------------------------------
+
+
+body,
+p, {
+	font-family:georgia, serif;
+	font-style:italic;
+	font-size:16px;
+	line-height: 1.1em;
+}
+* {
+   -webkit-font-smoothing: antialiased;
+   -moz-font-smoothing: antialiased;
+   -o-font-smoothing: antialiased;
+   font-smoothing: antialiased;
+}
+.h {
+	text-transform:uppercase;
+	font-style:normal;
+	letter-spacing: 0.2em;
+	font-weight: normal;
+	line-height: 1.4em;
+}
+.sub {
+	font-weight: normal;
+}
+.large {
+	font-size:28px;
+	line-height: 1.1em;
+}
+.med {
+	font-size:18px;
+	line-height: 1.1em;
+}
+.small {
+	font-size:14px;
+	line-height: 1.1em;
+}
+.center {
+	text-align:center;
+}
+hgroup {
+	margin:0;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Generic Page Contents
+//-------------------------------------------------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Links
+//-------------------------------------------------------------------------------------------------------------------
+
+
+a:link,
+a:visited {
+	color:;
+	text-decoration:none;
+}
+a:hover,
+a:focus,
+a:active {
+	color:;
+	text-decoration:none;
+	outline:none;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Forms & Buttons
+//-------------------------------------------------------------------------------------------------------------------
+
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+	padding: 10px;
+	border:none;
+	.placeholder();
+}
+
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='password']:hover,
+textarea:hover {
+
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+textarea:focus {
+	outline:none;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Header
+//-------------------------------------------------------------------------------------------------------------------
+
+
+.menu {
+		li {
+
+		}
+		.current-menu-item a,
+		.current-post-ancestor a,
+		a:hover,
+		a:focus,
+		a:visited {
+
+		}
+}
+.sitename a {
+
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Content
+//-------------------------------------------------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Footer
+//-------------------------------------------------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//	Media Queries
+//-------------------------------------------------------------------------------------------------------------------
+
+
+@media (max-width: 400px) {
+
+}
