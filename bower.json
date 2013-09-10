@@ -1,0 +1,6 @@
+{
+  "name": "wp-starter",
+  "dependencies": {
+    "jquery": "2"
+  }
+}

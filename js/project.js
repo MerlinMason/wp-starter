@@ -1,3 +1,3 @@
 $(function() {
-	$( 'body' ).addClass( 'js' );
+	console.log("jQuery is running!");
 });
