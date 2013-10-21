@@ -1,3 +1,7 @@
+//----------------------------------------------------------------------------//
+// Reset
+//----------------------------------------------------------------------------//
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -31,17 +35,17 @@ ins { background-color:#ff9; color:#000; text-decoration:none; }
 mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
 del { text-decoration: line-through; }
 abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
-/* tables still need cellspacing="0" in the markup */
+// tables still need cellspacing="0" in the markup
 table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
-/* END RESET CSS */
+// END RESET CSS
 body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:140%; }
 table { font-size:inherit; font:100%; }
 select, input, textarea { font:99% sans-serif; }
-/* normalize monospace sizing */
+// normalize monospace sizing
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
-/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+// Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test
 a:hover, a:active { outline: none; }
 ul { margin-left:0; list-style:none; }
 ol { margin-left:0; list-style-type: decimal; }
@@ -54,19 +58,18 @@ pre { padding: 15px; white-space: pre; white-space: pre-wrap; white-space: pre-l
 input[type="radio"] { vertical-align: text-bottom; }
 input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
 .ie6 input { vertical-align: text-bottom; }
-/* hand cursor on clickable input elements */
+// hand cursor on clickable input elements
 label, input[type=button], input[type=submit], button { cursor: pointer; }
-/* make buttons play nice in IE:    
-   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+// make buttons play nice in IE: www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
 button {  width: auto; overflow: visible; }
-/* bicubic resizing for non-native sized IMG: 
-   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+// bicubic resizing for non-native sized IMG: code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
-/* 
- * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
- */
+//----------------------------------------------------------------------------//
+// print styles
+// inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+//----------------------------------------------------------------------------//
+
 @media print {
   * { background: transparent !important; color: #444 !important; text-shadow: none; }
   a, a:visited { color: #444 !important; text-decoration: underline; }

@@ -1,39 +1,57 @@
-// HELPERS
 
+//----------------------------------------------------------------------------//
+// Clearfix
+//----------------------------------------------------------------------------//
 
-/* Typography
---------------------------------------------------------------------------- */
-.caps { text-transform: uppercase; }
+.cf,
+.clearfix {
+    &:before,
+    &:after {
+        content:" ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//----------------------------------------------------------------------------//
+// Typography
+//----------------------------------------------------------------------------//
+
+.caps { text-transform:uppercase; }
 .capitalize,
-.capitalise { text-transform: capitalize; }
+.capitalise { text-transform:capitalize; }
 
-.text-left { text-align: left; }
+.text-left { text-align:left; }
 
-/* extra specificity needed for tables */
+// extra specificity needed for tables
 .table .text-right,
-.text-right { text-align: right; }
+.text-right { text-align:right; }
 
 .table .text-centre,
 .table .text-center
 .text-centre,
-.text-center { text-align: center; }
+.text-center { text-align:center; }
 
-/* cut down really long text strings so they don't wrap onto two lin... */
+// cut down really long text strings so they don't wrap onto two lin...
 .text-truncate { .text-truncate(100%); }
 
-/* force long words like emails to wrap */
-.letterwrap { word-break: break-all; }
+// force long words like emails to wrap
+.letterwrap { word-break:break-all; }
 
-/* force buttons to stay on one line etc. */
-.nowrap { white-space: nowrap; }
+// force buttons to stay on one line etc.
+.nowrap { white-space:nowrap; }
 
 
-/* Layout
---------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------//
+// Layout
+//----------------------------------------------------------------------------//
+
 .fr { float:right; }
 .fl { float:left; }
 
-/* force element full width - useful for textareas etc */
+// Force element full width - useful for textareas etc
 .fit {
 	.box-sizing(border-box);
 	width:100%;
@@ -41,17 +59,17 @@
 }
 
 .scale {
-	width: 100%;
+	width:100%;
 	height:auto;
-	display: block;
+	display:block;
 }
 
-// define 1 grid unit for margins
-@05x:  (@base-spacing-unit/2);
-@1x:   @base-spacing-unit;
-@2x:   (@1x * 2);
-@3x:   (@1x * 3);
-@4x:   (@1x * 4);
+// Define 1 grid unit for margins
+@1x:@space;
+@05x:(@1x/2);
+@2x:(@1x * 2);
+@3x:(@1x * 3);
+@4x:(@1x * 4);
 
 .mr-0 { margin-right:0!important; }
 .ml-0 { margin-left:0!important; }
@@ -63,37 +81,34 @@
 .mb-05x { margin-bottom:@05x!important; }
 .mt-05x { margin-top:@05x!important; }
 
-.mr-1x { margin-right: @1x!important; }
-.ml-1x { margin-left: @1x!important; }
-.mb-1x { margin-bottom: @1x!important; }
-.mt-1x { margin-top: @1x!important; }
+.mr-1x { margin-right:@1x!important; }
+.ml-1x { margin-left:@1x!important; }
+.mb-1x { margin-bottom:@1x!important; }
+.mt-1x { margin-top:@1x!important; }
 
-.mr-2x { margin-right: @2x!important; }
-.ml-2x { margin-left: @2x!important; }
-.mb-2x { margin-bottom: @2x!important; }
-.mt-2x { margin-top: @2x!important; }
+.mr-2x { margin-right:@2x!important; }
+.ml-2x { margin-left:@2x!important; }
+.mb-2x { margin-bottom:@2x!important; }
+.mt-2x { margin-top:@2x!important; }
 
-.mr-3x { margin-right: @3x!important; }
-.ml-3x { margin-left: @3x!important; }
-.mb-3x { margin-bottom: @3x!important; }
-.mt-3x { margin-top: @3x!important; }
+.mr-3x { margin-right:@3x!important; }
+.ml-3x { margin-left:@3x!important; }
+.mb-3x { margin-bottom:@3x!important; }
+.mt-3x { margin-top:@3x!important; }
 
-.mr-4x { margin-right: @4x!important; }
-.ml-4x { margin-left: @4x!important; }
-.mb-4x { margin-bottom: @4x!important; }
-.mt-4x { margin-top: @4x!important; }
+.mr-4x { margin-right:@4x!important; }
+.ml-4x { margin-left:@4x!important; }
+.mb-4x { margin-bottom:@4x!important; }
+.mt-4x { margin-top:@4x!important; }
 
 
-/* Hide text off screen for accessibility / image replacement
---------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------//
+// Accessibility / image replacement
+//----------------------------------------------------------------------------//
+
 .text-hidden,
 .ir {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
 }
-
-/* Clearfix
---------------------------------------------------------------------------- */
-
-.cf { .clearfix(); }
