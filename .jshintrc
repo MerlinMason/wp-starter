@@ -1,41 +1,18 @@
 {
-    "passfail"      : false,  // Stop on first error.
-    "maxerr"        : 10000,  // Maximum errors before stopping. We want all the errors, so set to an arbitrarily high number
-
-    // Specifies predefined globals that JSHint will ignore.
-    "browser"       : true,   // Standard browser globals e.g. `window`, `document`.
-
-    // Our predefined global varaibles. Third party libraries and our app's namespace
-    "predef": [
-        "wp-starter",
-    ],
-
-    // Development.
-    "devel"         : true,   // Allow development statements e.g. `console.log();`.
-    "jquery"        : true,   // This option defines globals exposed by the jQuery JavaScript library.
-
-    // EcmaScript 5
-    "strict"        : true,   // Require `use strict` pragma for every function.
-    "globalstrict"  : true,   // Allow global "use strict" as well as function scope
-
-    // Our Way
-    "bitwise"       : true,     // Prohibit bitwise operators (&, |, ^, etc.).
-    "curly"         : true,     // Require {} for every new block or scope.
-    "eqeqeq"        : true,     // Prohibits the use of == and != in favor of === and !==.
-    "evil"          : false,    // Do NOT tolerate use of `eval`.
-    "forin"         : true,     // Requires all for in loops to filter object's items. It's generally safer to always filter out inherited properties
-    "indent"        : 4,        // Indentation is 4 spaces
-    "latedef"       : true,     // Prohibit variable use before definition.
-    "loopfunc"      : false,    // Disallow functions to be defined within loops.
-    "newcap"        : true,     // Requires you to capitalize names of constructor functions
-    "noarg"         : true,     // Prohibits the use of arguments.caller and arguments.callee. ECMAScript 5 forbids this
-    "noempty"       : true,     // Warns when you have an empty block in your code
-    "quotmark"      : "double", // Specifies required quote type. Either true, "single", or "double"
-    "trailing"      : true,     // Prohibit trailing whitespaces.
-    "undef"         : true,     // Require all non-global variables be declared before they are used.
-    "unused"        : "vars",   // Warns when you define and never use your variables. "vars" ignores arguments to functions
-    "white"         : true,     // Check against strict whitespace and indentation rules.
-    "notypeof"      : false,    // We want warnings about incorrect usage of TypeOf
-    "freeze"        : true      // Disallow modification of native prototypes
-    "camelcase"     : true,     // This option allows you to force all variable names to use either camelCase style or UPPER_CASE with underscores.
+    "curly": true,
+    "eqeqeq": true,
+    "strict": true,
+    "evil": true,
+    "indent": 4,
+    "undef": true,
+    "white": true,
+    "browser": true,
+    "quotmark": "double",
+    "trailing": true,
+    "globals": {
+        "jQuery": true,
+        "console": true,
+        "module": true,
+        "require": true
+    }
 }
