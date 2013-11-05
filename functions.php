@@ -1,13 +1,11 @@
 <?php 
 
-// call minifed jQuery from bower
-function wpstarter_jquery_enqueue() {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', "/wp-content/themes/wp-starter/components/jquery/jquery.min.js", false, null);
-	wp_enqueue_script('jquery');
-}
-if (!is_admin()) add_action("wpstarter_enqueue_scripts", "wpstarter_jquery_enqueue", 11);
+    // stop wordpress from loading it's own version of jQuery
+    function wpstarter_custom_js() {
+        wp_deregister_script('jquery');
+    }
+    if (!is_admin()) add_action("wpstarter_enqueue_scripts", "wpstarter_custom_js", 11);
 
-// extend this file with www.wpfunction.me
+    // extend this file with www.wpfunction.me
 
 ?>
