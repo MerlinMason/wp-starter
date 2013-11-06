@@ -51,22 +51,7 @@ module.exports = function (grunt) {
 
         jshint: {
             options: {
-                curly: true,
-                eqeqeq: true,
-                strict: true,
-                evil: true,
-                indent: 4,
-                undef: true,
-                white: true,
-                browser: true,
-                quotmark: "double",
-                trailing: true,
-                globals: {
-                    jQuery: true,
-                    console: true,
-                    module: true,
-                    require: true
-                },
+                jshintrc: ".jshintrc"
             },
             all: [
                 ".jshintrc",
