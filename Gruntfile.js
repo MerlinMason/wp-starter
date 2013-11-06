@@ -103,12 +103,34 @@ module.exports = function (grunt) {
                 files: "js/project.js",
                 tasks: "buildjs"
             }
+        },
+
+        notify: {
+            notify_hooks: {
+                options: {
+                    enabled: true,
+                    max_jshint_notifications: 5,
+                }
+            },
+            js: {
+                options: {
+                    title: "Back of the net!",
+                    message: "Javascript build successful!"
+                }
+            },
+            less: {
+                options: {
+                    title: "Cashback!",
+                    message: "LESS build successful!"
+                }
+            }
         }
+
     });
 
     // List of available tasks
     grunt.registerTask("default", []);
-    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin"]);
-    grunt.registerTask("buildjs", ["jshint", "concat", "uglify"]);
+    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin", "notify:less"]);
+    grunt.registerTask("buildjs", ["jshint", "concat", "uglify", "notify:js"]);
 
 };
