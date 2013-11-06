@@ -92,6 +92,17 @@ module.exports = function (grunt) {
                     "js/production.js": ["js/production.js"]
                 }
             }
+        },
+
+        watch: {
+            css: {
+                files: "styles/*.less",
+                tasks: "buildcss"
+            },
+            scripts: {
+                files: "js/project.js",
+                tasks: "buildjs"
+            }
         }
     });
 
