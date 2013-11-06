@@ -5,26 +5,24 @@
 </div>
 
 <?php
-
-	wp_footer();
-
 	$production = false;
+	$theme = get_template_directory_uri();
 
 	// if we're in production mode, include minified concatenated script
 	// if not then pull them in unminified individually for easier debugging
-	if (production) {
+	if ($production) {
 
-		echo '<script src ="' . bloginfo("template_url") . '/js/production.js"></script>';
+		echo '<script src ="' . $theme . '/js/production.js"></script>';
 
 	} else {
 
-		echo '<script src ="' . bloginfo("template_url") . '/js/bower/jquery/jquery.js"></script>';
-		echo '<script src ="' . bloginfo("template_url") . '/js/bower/modernizr/modernizr.js"></script>';
-		echo '<script src ="' . bloginfo("template_url") . '/js/project.js"></script>';
+		echo '<script src ="' . $theme . '/js/bower/jquery/jquery.js"></script>';
+		echo '<script src ="' . $theme . '/js/bower/modernizr/modernizr.js"></script>';
+		echo '<script src ="' . $theme . '/js/project.js"></script>';
 
 	}
-
 ?>
+<?php wp_footer(); ?>
 
 
 </body>
