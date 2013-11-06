@@ -12,7 +12,6 @@ module.exports = function (grunt) {
         less: {
             development: {
                 options: {
-                    compress: true,
                     strictMath: true,
                     strictUnits: true,
                     cleancss: true
