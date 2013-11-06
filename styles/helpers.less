@@ -1,8 +1,23 @@
-
 //----------------------------------------------------------------------------//
+// A Collection of Mixins & Helpers
+//----------------------------------------------------------------------------//
+
+.force-hardware-acceleration() {
+    transform:translate3d(0, 0, 0);
+    backface-visibility:hidden;
+    perspective:1000;
+}
+
+.placeholder(@color:@input-color-placeholder) {
+    &::-webkit-input-placeholder { color:@color; }
+}
+
+.resizable(@direction) {
+    resize:@direction; // Options: horizontal, vertical, both
+    overflow:auto; // Safari fix
+}
+
 // Clearfix
-//----------------------------------------------------------------------------//
-
 .cf,
 .clearfix {
     &:before,
@@ -15,17 +30,14 @@
     }
 }
 
-//----------------------------------------------------------------------------//
 // Typography
-//----------------------------------------------------------------------------//
-
 .caps { text-transform:uppercase; }
 .capitalize,
 .capitalise { text-transform:capitalize; }
 
 .text-left { text-align:left; }
 
-// extra specificity needed for tables
+// extra specificity may be needed for tables
 .table .text-right,
 .text-right { text-align:right; }
 
@@ -35,7 +47,15 @@
 .text-center { text-align:center; }
 
 // cut down really long text strings so they don't wrap onto two lin...
-.text-truncate { .text-truncate(100%); }
+// can be used as a class
+.text-truncate { .truncate(100%); }
+// or a mixin to specify cut-off width
+.truncate(@width) {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:@width;
+}
 
 // force long words like emails to wrap
 .letterwrap { word-break:break-all; }
@@ -44,71 +64,136 @@
 .nowrap { white-space:nowrap; }
 
 
-//----------------------------------------------------------------------------//
 // Layout
-//----------------------------------------------------------------------------//
-
 .fr { float:right; }
 .fl { float:left; }
 
 // Force element full width - useful for textareas etc
 .fit {
-	.box-sizing(border-box);
-	width:100%;
-	display:block;
+    box-sizing:border-box;
+    width:100%;
+    display:block;
 }
 
 .scale {
-	width:100%;
-	height:auto;
-	display:block;
+    width:100%;
+    height:auto;
+    display:block;
 }
 
-// Define 1 grid unit for margins
+// Center-align a block level element
+.center-block() {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+// Sizing shortcuts
+.size(@width, @height) {
+    width:@width;
+    height:@height;
+}
+.square(@size) {
+    .size(@size, @size);
+}
+
+// Spacer units for over-ruling modular spacing
+// html prefix adds greater specificity
 @1x:@space;
 @05x:(@1x/2);
 @2x:(@1x * 2);
 @3x:(@1x * 3);
 @4x:(@1x * 4);
 
-.mr-0 { margin-right:0!important; }
-.ml-0 { margin-left:0!important; }
-.mb-0 { margin-bottom:0!important; }
-.mt-0 { margin-top:0!important; }
+html .mr-0 { margin-right:0; }
+html .ml-0 { margin-left:0; }
+html .mb-0 { margin-bottom:0; }
+html .mt-0 { margin-top:0; }
 
-.mr-05x { margin-right:@05x!important; }
-.ml-05x { margin-left:@05x!important; }
-.mb-05x { margin-bottom:@05x!important; }
-.mt-05x { margin-top:@05x!important; }
+html .mr-05x { margin-right:@05x; }
+html .ml-05x { margin-left:@05x; }
+html .mb-05x { margin-bottom:@05x; }
+html .mt-05x { margin-top:@05x; }
 
-.mr-1x { margin-right:@1x!important; }
-.ml-1x { margin-left:@1x!important; }
-.mb-1x { margin-bottom:@1x!important; }
-.mt-1x { margin-top:@1x!important; }
+html .mr-1x { margin-right:@1x; }
+html .ml-1x { margin-left:@1x; }
+html .mb-1x { margin-bottom:@1x; }
+html .mt-1x { margin-top:@1x; }
 
-.mr-2x { margin-right:@2x!important; }
-.ml-2x { margin-left:@2x!important; }
-.mb-2x { margin-bottom:@2x!important; }
-.mt-2x { margin-top:@2x!important; }
+html .mr-2x { margin-right:@2x; }
+html .ml-2x { margin-left:@2x; }
+html .mb-2x { margin-bottom:@2x; }
+html .mt-2x { margin-top:@2x; }
 
-.mr-3x { margin-right:@3x!important; }
-.ml-3x { margin-left:@3x!important; }
-.mb-3x { margin-bottom:@3x!important; }
-.mt-3x { margin-top:@3x!important; }
+html .mr-3x { margin-right:@3x; }
+html .ml-3x { margin-left:@3x; }
+html .mb-3x { margin-bottom:@3x; }
+html .mt-3x { margin-top:@3x; }
 
-.mr-4x { margin-right:@4x!important; }
-.ml-4x { margin-left:@4x!important; }
-.mb-4x { margin-bottom:@4x!important; }
-.mt-4x { margin-top:@4x!important; }
+html .mr-4x { margin-right:@4x; }
+html .ml-4x { margin-left:@4x; }
+html .mb-4x { margin-bottom:@4x; }
+html .mt-4x { margin-top:@4x; }
 
 
-//----------------------------------------------------------------------------//
 // Accessibility / image replacement
-//----------------------------------------------------------------------------//
-
 .text-hidden,
 .ir {
     text-indent:100%;
     white-space:nowrap;
     overflow:hidden;
+}
+
+
+// Retina background-image support with non-retina fall back
+.retina-image(@file-1x, @file-2x, @width-1x, @height-1x) {
+    background-image:url("@{file-1x}");
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio:2),
+    only screen and (min--moz-device-pixel-ratio:2),
+    only screen and (-o-min-device-pixel-ratio:2/1),
+    only screen and (min-device-pixel-ratio:2),
+    only screen and (min-resolution:192dpi),
+    only screen and (min-resolution:2dppx) {
+        background-image: url("@{file-2x}");
+        background-size:@width-1x @height-1x;
+    }
+}
+
+
+// Gradients
+.grad-horizontal(@startColor:#555, @endColor:#333) {
+    background-color:@endColor;
+    background-image:linear-gradient(to right, @startColor, @endColor);
+    background-repeat:repeat-x;
+}
+.grad-vertical(@startColor:#555, @endColor:#333) {
+    background-color:@endColor;
+    background-image:linear-gradient(to bottom, @startColor, @endColor);
+    background-repeat:repeat-x;
+}
+.grad-directional(@startColor:#555, @endColor:#333, @deg:45deg) {
+    background-color:@endColor;
+    background-image:linear-gradient(@deg, @startColor, @endColor);
+    background-repeat:repeat-x;
+}
+.grad-horizontal-three-colors(@startColor:#00b3ee, @midColor:#7a43b6, @colorStop:50%, @endColor:#c3325f) {
+    background-color:mix(@midColor, @endColor, 80%);
+    background-image:linear-gradient(to right, @startColor, @midColor @colorStop, @endColor);
+    background-repeat:no-repeat;
+}
+.grad-vertical-three-colors(@startColor:#00b3ee, @midColor:#7a43b6, @colorStop:50%, @endColor:#c3325f) {
+    background-color:mix(@midColor, @endColor, 80%);
+    background-image:linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-repeat:no-repeat;
+}
+.grad-radial(@innerColor:#555, @outerColor:#333) {
+    background-color:@outerColor;
+    background-image:radial-gradient(circle, @innerColor, @outerColor);
+    background-repeat:no-repeat;
+}
+.grad-striped(@color:#555, @angle:45deg) {
+    background-color:@color;
+    background-image:linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
 }

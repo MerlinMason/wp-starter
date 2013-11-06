@@ -1,80 +1,72 @@
 /*!
-	Theme Name: WP-Starter
-	Author: Merlin Mason
-	Version: 1.0
-	License: GNU General Public License
+    Theme Name: WP-Starter
+    Author: Merlin Mason
+    Version: 1.0
+    License: GNU General Public License
 */
 
 
 //----------------------------------------------------------------------------//
-//	Setup
+//  Setup
 //----------------------------------------------------------------------------//
 
 
 @charset "UTF-8";
 @import "reset.less";
 @import "vars.less";
-@import "mixins.less";
-@import "grid.less";
 @import "helpers.less";
+@import "grid.less";
 
 ::-moz-selection {
-	background:@color-highlight;
-	color:#fff;
-	text-shadow:none;
+    background:@color-highlight;
+    color:#fff;
+    text-shadow:none;
 }
 ::selection {
-	background:@color-highlight;
-	color:#fff;
-	text-shadow:none;
+    background:@color-highlight;
+    color:#fff;
+    text-shadow:none;
 }
 
 
 //----------------------------------------------------------------------------//
-//	Typography
+//  Typography
 //----------------------------------------------------------------------------//
 
 
 body {
-	font-family:@font-family-base;
-	font-size:@font-size-base;
-	line-height:@line-height-base;
-	color:@color-text;
+    font-family:@font-family-base;
+    font-size:@font-size-base;
+    line-height:@line-height-base;
+    color:@color-text;
 }
 
-* {
-   -webkit-font-smoothing:antialiased;
-   -moz-font-smoothing:antialiased;
-   -o-font-smoothing:antialiased;
-   font-smoothing:antialiased;
-}
+* { -webkit-font-smoothing:antialiased; }
 
-p {
-	margin-bottom:@space;
-}
+p { margin-bottom:@space; }
 
 
 //----------------------------------------------------------------------------//
-//	Links
+//  Links
 //----------------------------------------------------------------------------//
 
 
 a:link,
 a:visited {
-	color:@color-link;
-	text-decoration:none;
+    color:@color-link;
+    text-decoration:none;
 }
 a:hover,
 a:focus,
 a:active {
-	color:@color-link-hover;
-	text-decoration:none;
-	outline:none;
+    color:@color-link-hover;
+    text-decoration:none;
+    outline:none;
 }
 
 
 //----------------------------------------------------------------------------//
-//	Forms & Buttons
+//  Forms & Buttons
 //----------------------------------------------------------------------------//
 
 
@@ -82,9 +74,9 @@ input[type='text'],
 input[type='email'],
 input[type='password'],
 textarea {
-	padding:(@space/2);
-	border:none;
-	.placeholder();
+    padding:(@space/2);
+    border:none;
+    .placeholder();
 }
 
 input[type='text']:hover,
@@ -98,52 +90,52 @@ input[type='text']:focus,
 input[type='email']:focus,
 input[type='password']:focus,
 textarea:focus {
-	outline:none;
+    outline:none;
 }
 
 
 //----------------------------------------------------------------------------//
-//	Header
+//  Header
 //----------------------------------------------------------------------------//
 
 
 .page-header {
-	.menu {
-		li {
+    .menu {
+        li {
 
-		}
-		.current-menu-item a,
-		.current-post-ancestor a,
-		a:visited {
+        }
+        .current-menu-item a,
+        .current-post-ancestor a,
+        a:visited {
 
-		}
-		a:hover,
-		a:focus {
+        }
+        a:hover,
+        a:focus {
 
-		}
-	}
-	.sitename a {
+        }
+    }
+    .sitename a {
 
-	}
-	@media (max-width:@break-small) { }
-	@media (max-width:@break-medium) { }
-	@media (max-width:@break-large) { }
+    }
+    @media (max-width:@break-small) { }
+    @media (max-width:@break-medium) { }
+    @media (max-width:@break-large) { }
 }
 
 
 //----------------------------------------------------------------------------//
-//	Content
+//  Content
 //----------------------------------------------------------------------------//
 
 
 
 //----------------------------------------------------------------------------//
-//	Footer
+//  Footer
 //----------------------------------------------------------------------------//
 
 
 .page-footer {
-	@media (max-width:@break-small) { }
-	@media (max-width:@break-medium) { }
-	@media (max-width:@break-large) { }
+    @media (max-width:@break-small) { }
+    @media (max-width:@break-medium) { }
+    @media (max-width:@break-large) { }
 }

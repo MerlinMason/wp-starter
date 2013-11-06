@@ -1,84 +1,68 @@
 //----------------------------------------------------------------------------//
 // Reset
+// "Reset Restarted" by Harry Roberts 
+// http://csswizardry.com/2011/10/reset-restarted/
 //----------------------------------------------------------------------------//
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, figure, footer, header, 
-hgroup, menu, nav, section, menu,
-time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-}                  
-
-article, aside, figure, footer, header, 
-hgroup, nav, section { display:block; }
-nav ul { list-style:none; }
-blockquote, q { quotes:none; }
-blockquote:before, blockquote:after,
-q:before, q:after { content:''; content:none; }
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
-ins { background-color:#ff9; color:#000; text-decoration:none; }
-.ad ins { background-color: transparent;}
-mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
-del { text-decoration: line-through; }
-abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
-// tables still need cellspacing="0" in the markup
-table { border-collapse:collapse; border-spacing:0; }
-hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
-input, select { vertical-align:middle; }
-// END RESET CSS
-body { font:13px sans-serif; *font-size:small; *font:x-small; line-height:140%; }
-table { font-size:inherit; font:100%; }
-select, input, textarea { font:99% sans-serif; }
-// normalize monospace sizing
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
-// Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test
-a:hover, a:active { outline: none; }
-ul { margin-left:0; list-style:none; }
-ol { margin-left:0; list-style-type: decimal; }
-small { font-size:85%; }
-strong, th { font-weight: bold; }
-td, td img { vertical-align:top; } 
-sub { vertical-align: sub; font-size: smaller; }
-sup { vertical-align: super; font-size: smaller; }
-pre { padding: 15px; white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
-input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
-.ie6 input { vertical-align: text-bottom; }
-// hand cursor on clickable input elements
-label, input[type=button], input[type=submit], button { cursor: pointer; }
-// make buttons play nice in IE: www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
-button {  width: auto; overflow: visible; }
-// bicubic resizing for non-native sized IMG: code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
-.ie7 img { -ms-interpolation-mode: bicubic; }
-
-//----------------------------------------------------------------------------//
-// print styles
-// inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
-//----------------------------------------------------------------------------//
-
-@media print {
-  * { background: transparent !important; color: #444 !important; text-shadow: none; }
-  a, a:visited { color: #444 !important; text-decoration: underline; }
-  a:after { content: " (" attr(href) ")"; } 
-  abbr:after { content: " (" attr(title) ")"; }
-  .ir a:after { content: ""; }  /* Don't show links for images */ 
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  img { page-break-inside: avoid; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,
+a,abbr,address,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strong,sub,sup,tt,var,
+b,u,i,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+    margin:0;
+    padding:0;
+}
+article,aside,details,figcaption,figure,footer,
+header,hgroup,menu,nav,section{
+    display:block;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+strong,b,mark{
+    font-weight:bold;
+    font-style:inherit;
+}
+em,i,cite,q,address,dfn,var{
+    font-style:italic;
+    font-weight:inherit;
+}
+abbr[title],dfn[title]{
+    cursor:help;
+    border-bottom:1px dotted;
+}
+ins{
+    border-bottom:1px solid;
+}
+a,u,ins{
+    text-decoration:none;
+}
+del,s{
+    text-decoration:line-through;
+}
+pre,code,samp,kbd{
+    font-family:monospace;
+}
+small{
+    font-size:0.75em;
+}
+img{
+    border:none;
+    font-style:italic;
+}
+input,
+select,
+textarea{
+    font:inherit;
 }

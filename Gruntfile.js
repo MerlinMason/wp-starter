@@ -23,6 +23,32 @@ module.exports = function (grunt) {
             }
         },
 
+        autoprefixer: {
+            single_file: {
+                options: {
+                    browsers: ["last 2 version"]
+                },
+                src: "style.css",
+                dest: "style.css"
+            },
+        },
+
+        csslint: {
+            options: {
+                csslintrc: ".csslintrc"
+            },
+            strict: {
+                src: ["style.css"]
+            }
+        },
+
+        cssmin: {
+            minify: {
+                src: "style.css",
+                dest: "style.css"
+            }
+        },
+
         jshint: {
             options: {
                 curly: true,
@@ -71,7 +97,7 @@ module.exports = function (grunt) {
 
     // List of available tasks
     grunt.registerTask("default", []);
-    grunt.registerTask("buildcss", ["less"]);
+    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin"]);
     grunt.registerTask("buildjs", ["jshint", "concat", "uglify"]);
 
 };
