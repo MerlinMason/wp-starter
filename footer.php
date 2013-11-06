@@ -18,8 +18,8 @@
 
 	} else {
 
-		echo '<script src ="' . bloginfo("template_url") . '/components/jquery/jquery.js"></script>';
-		echo '<script src ="' . bloginfo("template_url") . '/components/modernizr/modernizr.js"></script>';
+		echo '<script src ="' . bloginfo("template_url") . '/js/bower/jquery/jquery.js"></script>';
+		echo '<script src ="' . bloginfo("template_url") . '/js/bower/modernizr/modernizr.js"></script>';
 		echo '<script src ="' . bloginfo("template_url") . '/js/project.js"></script>';
 
 	}

@@ -1,5 +1,5 @@
 .DS_Store
-/components
+/js/bower
 /node_modules
 npm-debug.log
 /js/production.js

@@ -13,7 +13,14 @@ wp-starter make use of the following projects:
 - http://gruntjs.com/
 - https://github.com/ai/autoprefixer
 
+##Requirements
+
+- node.js v0.10.21 +
+- grunt.js v0.4.1 +
+- Bower v1.2.7 +
+
 ##Using Grunt
+
 You can use the Grunt watch task to watch .less and .js files for changes and automatically process them.
 
     $ grunt watch
