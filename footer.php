@@ -16,7 +16,6 @@
 
     } else {
 
-        echo '<script src ="' . $theme . '/js/bower/jquery/jquery.js"></script>';
         echo '<script src ="' . $theme . '/js/bower/modernizr/modernizr.js"></script>';
         echo '<script src ="' . $theme . '/js/project.js"></script>';
 

@@ -62,7 +62,6 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 src: [
-                    "js/bower/jquery/jquery.js",
                     "js/bower/modernizr/modernizr.js",
                     "js/project.js"
                 ],
