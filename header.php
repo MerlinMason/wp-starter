@@ -17,7 +17,7 @@
 
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>"/>
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
     <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/favicon.ico">
 

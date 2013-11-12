@@ -1,5 +1,8 @@
 {
   "name": "wp-starter",
+  "dependencies": {
+    "jquery": "2"
+  },
   "devDependencies": {
     "modernizr": "~2.6.2"
   }
