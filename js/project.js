@@ -15,8 +15,9 @@
             console.log("Loaded");
         },
 
-        sayHello: function () {
-            console.log("Hello World");
+        sayHello: function (e) {
+            var button = $(e.currentTarget);
+            console.log("You clicked " + button);
         }
 
     };
@@ -25,5 +26,5 @@
     $(function () { wpstarter.init(); });
     // Images Loaded
     $(window).load(function () { wpstarter.windowLoaded(); });
-    
+
 } (jQuery));

@@ -13,6 +13,7 @@
         "jQuery": true,
         "console": true,
         "module": true,
-        "require": true
+        "require": true,
+        "Modernizr": true
     }
 }
