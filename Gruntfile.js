@@ -78,6 +78,17 @@ module.exports = function (grunt) {
             }
         },
 
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: "img/",
+                    src: ["*.{png,jpg,gif}"],
+                    dest: "img/"
+                }]
+            }
+        },
+
         watch: {
             css: {
                 files: "styles/*.less",
@@ -114,7 +125,7 @@ module.exports = function (grunt) {
 
     // List of available tasks
     grunt.registerTask("default", []);
-    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin", "notify:less"]);
+    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin", "imagemin", "notify:less"]);
     grunt.registerTask("buildjs", ["jshint", "concat", "uglify", "notify:js"]);
 
 };
