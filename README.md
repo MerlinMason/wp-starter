@@ -61,7 +61,7 @@ The JS build does the following process:
 
 wp-starter is compatible with dploy - https://github.com/LeanMeanFightingMachine/dploy/
 
-Example of dploy.yaml config (not version controlled by default)
+Example of dploy.yaml config (not part of the repository, but will be created when you install dploy)
 
     staging:
         scheme: ftp
