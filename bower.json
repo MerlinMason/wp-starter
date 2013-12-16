@@ -4,6 +4,6 @@
     "jquery": "2"
   },
   "devDependencies": {
-    "modernizr": "~2.6.2"
+    "modernizr": "~2.7.1"
   }
 }
