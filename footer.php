@@ -2,7 +2,7 @@
         <p class="copyright">&copy; <?php bloginfo('name'); ?>, <?php echo date('Y'); ?>. All rights reserved.</p>
     </footer>
 
-</div><!-- </.container> -->
+</div><?php // </.container> ?>
 
 <?php
     $production = false;
