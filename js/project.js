@@ -15,9 +15,13 @@
             console.log("Loaded");
         },
 
+        windowResized: function () {
+            console.log("Resized");
+        },
+
         sayHello: function (e) {
             var button = $(e.currentTarget);
-            console.log("You clicked " + button);
+            console.log("Hello! You clicked " + button);
         }
 
     };
@@ -26,5 +30,7 @@
     $(function () { wpstarter.init(); });
     // Images Loaded
     $(window).load(function () { wpstarter.windowLoaded(); });
+    // Window Resized
+    $(window).resize(function () { wpstarter.windowResized(); });
 
 } (jQuery));
