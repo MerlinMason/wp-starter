@@ -1,10 +1,10 @@
 <?php
 
     // stop wordpress from loading it's own version of jQuery
-    add_action( 'wp_enqueue_script', 'load_jquery' );
-    function load_jquery() {
-        wp_enqueue_script( 'jquery' );
+    function wpstarter_custom_js() {
+        wp_deregister_script('jquery');
     }
+    if (!is_admin()) add_action('wpstarter_enqueue_scripts', 'wpstarter_custom_js', 11);
 
     // extend this file with www.wpfunction.me
 
