@@ -30,7 +30,7 @@
     $(function () { wpstarter.init(); });
     // Images Loaded
     $(window).load(function () { wpstarter.windowLoaded(); });
-    // Window Resized
-    $(window).resize(function () { wpstarter.windowResized(); });
+    // Window Resized (smart debounced event)
+    $(window).bind("debouncedresize", function () { wpstarter.windowResized(); });
 
 } (jQuery));

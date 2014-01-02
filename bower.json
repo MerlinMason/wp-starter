@@ -4,6 +4,7 @@
     "jquery": "2"
   },
   "devDependencies": {
-    "modernizr": "~2.7.1"
+    "modernizr": "~2.7.1",
+    "jquery-smartresize": "latest"
   }
 }
