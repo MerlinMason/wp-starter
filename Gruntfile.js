@@ -14,7 +14,9 @@ module.exports = function (grunt) {
                 options: {
                     strictMath: true,
                     strictUnits: true,
-                    cleancss: true
+                    cleancss: true,
+                    sourceMap: true,
+                    sourceMapFilename: "style.map"
                 },
                 files: {
                     "style.css": "styles/style.less"
