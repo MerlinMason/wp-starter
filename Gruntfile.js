@@ -98,7 +98,7 @@ module.exports = function (grunt) {
                 tasks: "buildcss"
             },
             scripts: {
-                files: "js/project.js",
+                files: ["js/project.js", "Gruntfile.js"],
                 tasks: "buildjs"
             }
         },
