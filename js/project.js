@@ -20,23 +20,12 @@
         },
 
         windowScrolled: function () {
-            // Improve performance while scrolling by not triggering hover events
-            // http://www.thecssninja.com/javascript/pointer-events-60fps
-            var body = document.documentElement;
-            var timer;
-
-            if (!body.style.pointerEvents) {
-                body.style.pointerEvents = "none";
-            }
-
-            timer = setTimeout(function () {
-                body.style.pointerEvents = "";
-            }, 200);
+            console.log("Scrolled");
         },
 
         sayHello: function (e) {
             var button = $(e.currentTarget);
-            console.log("Hello! You clicked " + button);
+            alert("Hello from " + button);
         }
 
     };
