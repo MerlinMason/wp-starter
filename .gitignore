@@ -4,4 +4,5 @@
 npm-debug.log
 /js/production.js
 *.css
+*.map
 dploy.yaml
