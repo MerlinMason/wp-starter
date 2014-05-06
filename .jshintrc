@@ -12,6 +12,7 @@
     "globals": {
         "jQuery": true,
         "console": true,
+        "alert": true,
         "module": true,
         "require": true,
         "Modernizr": true

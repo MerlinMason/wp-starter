@@ -14,7 +14,9 @@ module.exports = function (grunt) {
                 options: {
                     strictMath: true,
                     strictUnits: true,
-                    cleancss: true
+                    cleancss: true,
+                    sourceMap: true,
+                    sourceMapFilename: "style.map"
                 },
                 files: {
                     "style.css": "styles/style.less"
@@ -62,7 +64,7 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 src: [
-                    "js/bower/jquery/jquery.js",
+                    "js/bower/jquery/dist/jquery.js",
                     "js/bower/modernizr/modernizr.js",
                     "js/bower/jquery-smartresize/jquery.debouncedresize.js",
                     "js/project.js"
@@ -96,7 +98,7 @@ module.exports = function (grunt) {
                 tasks: "buildcss"
             },
             scripts: {
-                files: "js/project.js",
+                files: ["js/project.js", "Gruntfile.js"],
                 tasks: "buildjs"
             }
         },

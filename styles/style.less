@@ -83,21 +83,25 @@ textarea {
     padding:(@space/2);
     border:none;
     .placeholder();
+    &:hover {
+
+    }
+    &:focus {
+        outline:none;
+        // Define your own focus styles here
+    }
 }
 
-input[type='text']:hover,
-input[type='email']:hover,
-input[type='password']:hover,
-textarea:hover {
+.btn,
+button,
+input[type="submit"] {
 
-}
+    &:hover {
 
-input[type='text']:focus,
-input[type='email']:focus,
-input[type='password']:focus,
-textarea:focus {
-    outline:none;
-    // Define your own focus styles here
+    }
+    &:focus {
+
+    }
 }
 
 
