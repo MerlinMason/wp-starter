@@ -7,7 +7,7 @@
 
 
 //----------------------------------------------------------------------------//
-//  Setup
+//  Setup & Creat Grid
 //----------------------------------------------------------------------------//
 
 
@@ -27,6 +27,14 @@
     color:#fff;
     text-shadow:none;
 }
+
+* { box-sizing:border-box; }
+.row { .make-row(); }
+.make-grid-columns();
+.make-grid(xs);
+@media (min-width: @screen-sm-min) { .make-grid(sm); }
+@media (min-width: @screen-md-min) { .make-grid(md); }
+@media (min-width: @screen-lg-min) { .make-grid(lg); }
 
 
 //----------------------------------------------------------------------------//
@@ -117,9 +125,9 @@ textarea:focus {
     .sitename a {
 
     }
-    @media (max-width:@break-small) { }
-    @media (max-width:@break-medium) { }
-    @media (max-width:@break-large) { }
+    @media (max-width:@screen-sm-min) { }
+    @media (max-width:@screen-md-min) { }
+    @media (max-width:@screen-lg-min) { }
 }
 
 
@@ -135,7 +143,7 @@ textarea:focus {
 
 
 .page-footer {
-    @media (max-width:@break-small) { }
-    @media (max-width:@break-medium) { }
-    @media (max-width:@break-large) { }
+    @media (max-width:@screen-sm-min) { }
+    @media (max-width:@screen-md-min) { }
+    @media (max-width:@screen-lg-min) { }
 }
