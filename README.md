@@ -53,7 +53,7 @@ The CSS build does the following process:
 
 The JS build does the following process:
 - jshints your project.js and Gruntfile.js files (based on .jshintrc config)
-- Searchs the project.js file for Modernizr refferences and generates a custom build with the tests you need
+- Searchs the project.js file for Modernizr references and generates a custom build with the tests you need
 - Concatinates all javascript files used in the site
 - Minifies the concatinated file
 - Mac OSX users will then receive a notification upon successful build
