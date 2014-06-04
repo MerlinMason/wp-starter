@@ -3,6 +3,7 @@
 /node_modules
 npm-debug.log
 /js/production.js
+/js/modernizr-custom.js
 *.css
 *.map
 dploy.yaml
