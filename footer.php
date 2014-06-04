@@ -16,10 +16,11 @@
 
     } else {
 
+        echo '<script src ="' . $theme . '/js/modernizr-custom.js"></script>';
         echo '<script src ="' . $theme . '/js/bower/jquery/dist/jquery.js"></script>';
-        echo '<script src ="' . $theme . '/js/bower/modernizr/modernizr.js"></script>';
         echo '<script src ="' . $theme . '/js/bower/jquery-smartresize/jquery.debouncedresize.js"></script>';
         echo '<script src ="' . $theme . '/js/project.js"></script>';
+        echo '<script src="//localhost:35729/livereload.js"></script>';
 
     }
 ?>

@@ -61,6 +61,36 @@ module.exports = function (grunt) {
             ]
         },
 
+        modernizr: {
+            dist: {
+                // [REQUIRED] Path to the build you're using for development.
+                "devFile" : "js/bower/modernizr/modernizr.js",
+
+                // [REQUIRED] Path to save out the built file.
+                "outputFile" : "js/modernizr-custom.js",
+
+                // Based on default settings on http://modernizr.com/download/
+                "extra" : {
+                    "shiv" : false,
+                    "printshiv" : false,
+                    "load" : false,
+                    "mq" : false,
+                    "cssclasses" : false
+                },
+
+                // By default, source is uglified before saving
+                "uglify" : false,
+
+                // By default, this task will crawl your project for references to Modernizr tests.
+                "parseFiles" : true,
+
+                // File to parse
+                "files" : {
+                    "src": ["js/project.js"]
+                }
+            }
+        },
+
         concat: {
             dist: {
                 src: [
@@ -93,6 +123,13 @@ module.exports = function (grunt) {
         },
 
         watch: {
+            options: {
+                livereload: true
+            },
+            images: {
+                files: ["img/**/*.{png,jpg,jpeg,gif}"],
+                tasks: "buildimg"
+            },
             css: {
                 files: "styles/*.less",
                 tasks: "buildcss"
@@ -121,6 +158,12 @@ module.exports = function (grunt) {
                     title: "Cashback!",
                     message: "LESS build successful!"
                 }
+            },
+            img: {
+                options: {
+                    title: "Jurassic Park!",
+                    message: "Image minify successful!"
+                }
             }
         }
 
@@ -128,7 +171,8 @@ module.exports = function (grunt) {
 
     // List of available tasks
     grunt.registerTask("default", []);
-    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin", "imagemin", "notify:less"]);
-    grunt.registerTask("buildjs", ["jshint", "concat", "uglify", "notify:js"]);
+    grunt.registerTask("buildcss", ["less", "autoprefixer", "csslint", "cssmin", "notify:less"]);
+    grunt.registerTask("buildjs", ["jshint", "modernizr", "concat", "uglify", "notify:js"]);
+    grunt.registerTask("buildimg", ["imagemin", "notify:img"]);
 
 };
