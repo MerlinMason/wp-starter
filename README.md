@@ -27,7 +27,7 @@ Once Bower is installed (http://bower.io), you can then install all dependencies
 
     bower install
 
-Once Grunt is installed (http://gruntjs.com/getting-started) you can install all dependencies by running (you may have to use 'sudo':
+Once Grunt is installed (http://gruntjs.com/getting-started) you can install all dependencies by running (you may have to prefix this with 'sudo'):
 
     npm install
 
