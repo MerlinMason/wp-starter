@@ -14,19 +14,20 @@ wp-starter make use of the following projects:
 - http://gruntjs.com/
 - https://github.com/ai/autoprefixer
 - http://modernizr.com/
+- http://livereload.com/
 
 ##Requirements for local dev
 
-- node.js v0.10.21 +
+- node.js v0.10.26 +
 - grunt.js v0.4.1 +
-- Bower v1.2.7 +
+- Bower v1.3.3 +
 
 ##Getting Setup
 Once Bower is installed (http://bower.io), you can then install all dependencies by running:
 
     bower install
 
-Once Grunt is installed (http://gruntjs.com/getting-started) you can install all dependencies by running:
+Once Grunt is installed (http://gruntjs.com/getting-started) you can install all dependencies by running (you may have to use 'sudo':
 
     npm install
 
@@ -42,20 +43,24 @@ Alternatively, you can process them at anytime with the following commands.
 
     $ grunt buildcss
     $ grunt buildjs
+    $ grunt buildimg
 
-The CSS build does the following process:
+The CSS build does the following tasks:
 - Compiles all the .less files imported into style.less
 - Autoprefixes the compiled style.css with vendor prefixes (by default it supports current browser version -2)
 - Checks the prefixed file for CSS Lint errors (based on .csslintrc config)
 - Minifies the file
-- Optimises all images
 - Mac OSX users will then receive a notification upon successful build
 
-The JS build does the following process:
+The JS build does the following tasks:
 - jshints your project.js and Gruntfile.js files (based on .jshintrc config)
 - Searchs the project.js file for Modernizr references and generates a custom build with the tests you need
 - Concatinates all javascript files used in the site
 - Minifies the concatinated file
+- Mac OSX users will then receive a notification upon successful build
+
+The IMG build does the following tasks:
+- Optimises all images
 - Mac OSX users will then receive a notification upon successful build
 
 ##Deployment
