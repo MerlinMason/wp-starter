@@ -50,18 +50,18 @@ The CSS build does the following tasks:
 - Autoprefixes the compiled style.css with vendor prefixes (by default it supports current browser version -2)
 - Checks the prefixed file for CSS Lint errors (based on .csslintrc config)
 - Minifies the file
-- Mac OSX users will then receive a notification upon successful build
+- Mac OSX / Linux Ubuntu users will then receive a notification upon successful build
 
 The JS build does the following tasks:
 - jshints your project.js and Gruntfile.js files (based on .jshintrc config)
 - Searchs the project.js file for Modernizr references and generates a custom build with the tests you need
 - Concatinates all javascript files used in the site
 - Minifies the concatinated file
-- Mac OSX users will then receive a notification upon successful build
+- Mac OSX / Linux Ubuntu users will then receive a notification upon successful build
 
 The IMG build does the following tasks:
 - Optimises all images
-- Mac OSX users will then receive a notification upon successful build
+- Mac OSX / Linux Ubuntu users will then receive a notification upon successful build
 
 ##Deployment
 
@@ -78,7 +78,8 @@ Example of dploy.yaml config (not part of the repository, but will be created wh
         check: true
         exclude: ["*.yaml", "*.json", "js/**/*.js", "js/project.js", "**/*.less", "node_modules", "Gruntfile.js", "README.md", ".bowerrc", ".csslintrc", ".editorconfig", ".gitignore", ".jshintrc"]
         include:
-            "style.css": "/"
+            "style.css": "/",
+            "js/production.js": "/js"
         path:
             remote: httpdocs/wp-content/themes/wp-starter/
 
