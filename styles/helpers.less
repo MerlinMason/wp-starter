@@ -9,7 +9,7 @@
     perspective:1000;
 }
 
-.placeholder(@color:@input-color-placeholder) {
+.placeholder(@color: #999) {
     &::-webkit-input-placeholder { color:@color; }
 }
 
@@ -30,41 +30,6 @@
         clear: both;
     }
 }
-
-// Typography
-.caps { text-transform:uppercase; }
-.capitalize,
-.capitalise { text-transform:capitalize; }
-
-.text-left { text-align:left; }
-
-// extra specificity may be needed for tables
-.table .text-right,
-.text-right { text-align:right; }
-
-.table .text-centre,
-.table .text-center
-.text-centre,
-.text-center { text-align:center; }
-
-.text-justify { text-align:justify; }
-
-// cut down really long text strings so they don't wrap onto two lin...
-// can be used as a class
-.text-truncate { .truncate(100%); }
-// or a mixin to specify cut-off width
-.truncate(@width) {
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    max-width:@width;
-}
-
-// force long words like emails to wrap
-.letterwrap { word-break:break-all; }
-
-// force buttons to stay on one line etc.
-.nowrap { white-space:nowrap; }
 
 
 // Layout
@@ -92,12 +57,13 @@
 }
 
 // Positioning shortcut
-.position(@position, @top:0, @right:0, @bottom:0, @left:0) {
+.position(@position, @top:0, @right:0, @bottom:0, @left:0, @zindex: 1) {
     position:@position;
     top:@top;
     right:@right;
     bottom:@bottom;
     left:@left;
+    z-index:@zindex;
 }
 
 // Sizing shortcuts
@@ -157,20 +123,25 @@ html .mt-4x { margin-top:@4x; }
 }
 
 
-// Retina background-image support with non-retina fall back
-.retina-image(@file-1x, @file-2x, @width-1x, @height-1x) {
-    background-image:url("@{file-1x}");
+// retina images made easy
+// usage: .retina("img/example.png", 50px, 50px);
+.retina(@image, @width, @height, @repeat: no-repeat) {
+    @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+    @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+    background-image: ~`"url(@{filename}.@{extension})"`;
+    background-repeat: @repeat;
 
     @media
-    only screen and (-webkit-min-device-pixel-ratio:2),
-    only screen and (min--moz-device-pixel-ratio:2),
-    only screen and (-o-min-device-pixel-ratio:2/1),
-    only screen and (min-device-pixel-ratio:2),
-    only screen and (min-resolution:192dpi),
-    only screen and (min-resolution:2dppx) {
-        background-image: url("@{file-2x}");
-        background-size:@width-1x @height-1x;
-    }
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {
+            /* on retina, use image that's scaled by 2 */
+            background-image: ~`"url(@{filename}@2x.@{extension})"`;
+            background-size: @width @height;
+        }
 }
 
 

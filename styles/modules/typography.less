@@ -1,0 +1,140 @@
+//----------------------------------------------------------------------------//
+// Typography
+//----------------------------------------------------------------------------//
+
+
+@font: "sans-serif";
+@fsize: 16px;
+
+body, p, input, button {
+    color:#666;
+    font-size:14px;
+    line-height:1.4;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    font-family:@font;
+    font-size:@fsize;
+}
+
+// baseline spacing
+p,
+.blockquote,
+.title {
+    margin-bottom:1.4em;
+    &:empty {
+        margin:0;
+    }
+}
+
+
+//----------------------------------
+// HEADINGS
+//----------------------------------
+
+
+// Setup
+[class*="heading-"] {
+    font-weight:normal;
+    margin-bottom:0.6em;
+    line-height:1.2;
+    &.lined {
+        border-bottom:3px solid #666;
+        padding-bottom:4px;
+    }
+}
+
+// Sizes
+[class*="heading-xl"]   { font-size:38px; }
+[class*="heading-lrg"]  { font-size:28px; }
+[class*="heading-med"]  { font-size:22px; }
+[class*="heading-sm"]   { font-size:16px; }
+[class*="heading-xs"]   { font-size:14px; }
+[class*="heading-xxs"]   { font-size:12px; }
+
+// Weights
+[class*="heading-"][class*="-lt"] { font-weight:100; }
+[class*="heading-"][class*="-rg"] { font-weight:400; }
+[class*="heading-"][class*="-md"] { font-weight:800; }
+
+// leading paragraphs
+.lead {
+    font-size:(@fsize * 1.2);
+}
+
+// aside / smallprint paragraphs
+.smallprint {
+    font-size:(@fsize * 0.8);
+}
+
+
+//----------------------------------
+// LINKS
+//----------------------------------
+
+
+a:link,
+a:visited {
+    color:blue;
+    text-decoration:none;
+    transition:all 0.2s;
+}
+a:hover,
+a:focus,
+a:active {
+    color:darken(red, 10%);
+    text-decoration:none;
+    outline:none;
+}
+
+.text-link {
+    &:link,
+    &:visited {
+        text-decoration:none;
+        color:red;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color:darken(red, 10%);
+    }
+}
+
+
+//----------------------------------
+// OTHER
+//----------------------------------
+
+
+.caps { text-transform:uppercase; }
+.capitalize,
+.capitalise { text-transform:capitalize; }
+
+.text-left { text-align:left; }
+
+// extra specificity may be needed for tables
+.table .text-right,
+.text-right { text-align:right; }
+
+.table .text-centre,
+.table .text-center
+.text-centre,
+.text-center { text-align:center; }
+
+.text-justify { text-align:justify; }
+
+// cut down really long text strings so they don't wrap onto two lin...
+// can be used as a class
+.text-truncate { .truncate(100%); }
+// or a mixin to specify cut-off width
+.truncate(@width) {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:@width;
+}
+
+// force long words like emails to wrap
+.letterwrap { word-break:break-all; }
+
+// force buttons to stay on one line etc.
+.nowrap { white-space:nowrap; }

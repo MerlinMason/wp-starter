@@ -1,13 +1,11 @@
 /*!
-    Theme Name: WP-Starter
-    Author: Merlin Mason
-    Version: 1.0
+    Starter by Merlin Mason
     License: The MIT License (MIT)
 */
 
 
 //----------------------------------------------------------------------------//
-//  Setup & Creat Grid
+//  Setup & Create Grid
 //----------------------------------------------------------------------------//
 
 
@@ -15,60 +13,27 @@
 @import "reset.less";
 @import "vars.less";
 @import "helpers.less";
-@import "grid.less";
 
-::-moz-selection {
-    background:@color-highlight;
-    color:#fff;
-    text-shadow:none;
-}
+@import "modules/grid";
+@import "modules/typography";
+
 ::selection {
-    background:@color-highlight;
+    background:@highlight;
     color:#fff;
     text-shadow:none;
 }
 
-* { box-sizing:border-box; }
+* {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
 .row { .make-row(); }
 .make-grid-columns();
 .make-grid(xs);
 @media (min-width: @screen-sm-min) { .make-grid(sm); }
 @media (min-width: @screen-md-min) { .make-grid(md); }
 @media (min-width: @screen-lg-min) { .make-grid(lg); }
-
-
-//----------------------------------------------------------------------------//
-//  Typography
-//----------------------------------------------------------------------------//
-
-
-body {
-    font-family:@font-family-base;
-    font-size:@font-size-base;
-    line-height:@line-height-base;
-    color:@color-text;
-}
-
-p { margin-bottom:@space; }
-
-
-//----------------------------------------------------------------------------//
-//  Links
-//----------------------------------------------------------------------------//
-
-
-a:link,
-a:visited {
-    color:@color-link;
-    text-decoration:none;
-}
-a:hover,
-a:focus,
-a:active {
-    color:@color-link-hover;
-    text-decoration:none;
-    outline:none;
-}
 
 
 //----------------------------------------------------------------------------//
@@ -88,7 +53,6 @@ textarea {
     }
     &:focus {
         outline:none;
-        // Define your own focus styles here
     }
 }
 
@@ -100,7 +64,7 @@ input[type="submit"] {
 
     }
     &:focus {
-
+        outline:none;
     }
 }
 
@@ -111,27 +75,9 @@ input[type="submit"] {
 
 
 .page-header {
-    .menu {
-        li {
-
-        }
-        a:link,
-        a:visited {
-
-        }
-        .current-menu-item a,
-        .current-post-ancestor a,
-        a:hover,
-        a:focus {
-
-        }
-    }
-    .sitename a {
-
-    }
-    @media (max-width:@screen-sm-min) { }
-    @media (max-width:@screen-md-min) { }
-    @media (max-width:@screen-lg-min) { }
+    @media (min-width:@screen-sm-min) { }
+    @media (min-width:@screen-md-min) { }
+    @media (min-width:@screen-lg-min) { }
 }
 
 
@@ -139,7 +85,7 @@ input[type="submit"] {
 //  Content
 //----------------------------------------------------------------------------//
 
-.postnav { }
+
 
 //----------------------------------------------------------------------------//
 //  Footer
@@ -147,7 +93,7 @@ input[type="submit"] {
 
 
 .page-footer {
-    @media (max-width:@screen-sm-min) { }
-    @media (max-width:@screen-md-min) { }
-    @media (max-width:@screen-lg-min) { }
+    @media (min-width:@screen-sm-min) { }
+    @media (min-width:@screen-md-min) { }
+    @media (min-width:@screen-lg-min) { }
 }

@@ -2,34 +2,21 @@
 // Variables
 //----------------------------------------------------------------------------//
 
+
 //----------------------------------------------------------------------------//
 // Colors
 //----------------------------------------------------------------------------//
 
+@bg:                        #dfdfdf;
+
 // Highlights
-@color-highlight:           #1cb4e6;
-@color-highlight-light:     lighten(@color-highlight, 5%);
-@color-highlight-dark:      darken(@color-highlight, 5%);
+@highlight:           #1cb4e6;
+@highlight-light:     lighten(@highlight, 5%);
+@highlight-dark:      darken(@highlight, 5%);
 
-@color-highlight-alt:       #ef0266;
-@color-highlight-alt-light: lighten(@color-highlight-alt, 5%);
-@color-highlight-alt-dark:  darken(@color-highlight-alt, 5%);
-
-// Text
-@color-text:                @black-50;
-@color-link:                #5cb85c;
-@color-link-hover:          darken(@color-link, 15%);
-
-// Grayscale
-@black-10:                  darken(#fff, 10%);
-@black-20:                  darken(#fff, 20%);
-@black-30:                  darken(#fff, 30%);
-@black-40:                  darken(#fff, 40%);
-@black-50:                  darken(#fff, 50%);
-@black-60:                  darken(#fff, 60%);
-@black-70:                  darken(#fff, 70%);
-@black-80:                  darken(#fff, 80%);
-@black-90:                  darken(#fff, 90%);
+@highlight-alt:       #ef0266;
+@highlight-alt-light: lighten(@highlight-alt, 5%);
+@highlight-alt-dark:  darken(@highlight-alt, 5%);
 
 
 //----------------------------------------------------------------------------//
@@ -60,22 +47,3 @@
     @media (min-width: @screen-lg-min) { width: @container-lg; }
 }
 
-
-//----------------------------------------------------------------------------//
-// Typography
-//----------------------------------------------------------------------------//
-
-@font-family-sans-serif:    "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:         Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:     Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-base:          @font-family-sans-serif;
-
-@font-size-base:            14px;
-@font-size-large:           (@font-size-base * 1.25);
-@font-size-small:           (@font-size-base * 0.85);
-@font-size-mini:            (@font-size-base * 0.75);
-
-@line-height-base:          1.4;
-
-// Forms
-@input-color-placeholder:   lighten(@color-text, 25%);
